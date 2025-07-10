@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookable Spaces</title>
+</head>
+<body>
+<ul>
+<li th:each="space : ${bookable}" th:text="${space.name} + ' - £' + ${space.price} + ' - ' + ${space.description}"></li>
+</ul>
+</body>
+</html>

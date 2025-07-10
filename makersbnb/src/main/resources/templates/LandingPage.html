@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MakersBnB</title>
+</head>
+<body>
+    <h1>Welcome to MakersBnB</h1>
+    <h2 th:text = "${nspaces} + ' spaces waiting to be discovered'"></h2>
+    <h3 th:text = "${bookings} + ' bookings made last week'"></h3>
+    <h4>Here's what some of our customers had to say:</h4>
+    <u1>
+        <li th:each="review : ${reviews}" th:text="${review}"></li>
+
+        </u1>
+
+</body>
+
+</html>
