@@ -1,17 +1,28 @@
 package com.makers.makersbnb.controller;
 
+import com.makers.makersbnb.repository.SpaceRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import com.makers.makersbnb.repository.StaffRepository;
+import com.makers.makersbnb.model.Staff;
+
 
 import java.util.ArrayList;
 
 @RestController
 public class StaffController {
+
+    @Autowired
+    StaffRepository staffRepository;
+
     @GetMapping("/team")
     public ModelAndView index() {
-        String[] Team = new String[]{"Toby", "Katerina", "Sandy"};
         ModelAndView modelAndView = new ModelAndView("/Teampage");
-        modelAndView.addObject("Team", Team);
+        Iterable<Staff> staff = staffRepository.findAll();
+        modelAndView.addObject("staff", staff);
         return modelAndView;
     }}
+
+

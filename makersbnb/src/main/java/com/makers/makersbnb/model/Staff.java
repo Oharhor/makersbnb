@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,13 +15,9 @@ import lombok.Setter;
 public class Staff {
 
     @Id
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
     private String name;
-
     private String role;
 
     public Staff(String name, String role) {

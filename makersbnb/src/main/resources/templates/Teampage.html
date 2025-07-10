@@ -8,7 +8,7 @@
 <h1>Meet our Team!</h1>
 <h2>In order of seniority:</h2>
 <ul>
-<li th:each =" member: ${Team}" th:text = "${member}" ></li>
+<li th:each =" member: ${staff}" th:text = "${member.name} + ': ' + ${member.role}" ></li>
 </ul>
 </body>
 </html>
